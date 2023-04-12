@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main
+{
+    public static int lastOccurrence(int arr[], int key, int i){
+        if(i==arr.length){
+            System.out.println(i);
+            return -1;
+        }
+        int isLast=lastOccurrence(arr,key,i+1);
+        if(isLast == -1 && arr[i]==key){
+            return i;
+        }
+        return isLast;
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0; i<arr.length; i++){
+		    arr[i]=sc.nextInt();
+		}
+		int key=sc.nextInt();
+		System.out.print(lastOccurrence(arr,key,0));
+	}
+}
