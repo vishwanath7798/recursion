@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main
+{
+    public static int power(int x, int n){
+        if(n==0){
+            return 1;
+        }
+        int a=power(x,n/2);
+        int b=a*a;
+        if(n%2 != 0){
+            b=x*b;
+        }
+        return b;
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int x=sc.nextInt();
+		int n=sc.nextInt();
+		System.out.print(power(x,n));
+	}
+}
